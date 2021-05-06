@@ -17,7 +17,7 @@ Neuron is a basic building block of a neural network. The Neurons in an Artifici
 A neuron simply takes the inputs which are numbers always, and applies boosting/attenuation mechanism using the weights for each respective input connection.
 When we pass input to the neuron it does the weighted sum and then passes the sum to activation function. The activation step makes the output state of neuron. The following diagram illustrates the blocks in a neuron
 
-![Neuron]()
+![Neuron](https://raw.githubusercontent.com/chaitanya-vanapamala/pytorch_end2_assignment1/main/neuron.png)
 
 Z = f (X1*W1+X2*W2+X3*W3)  - Where f is the activation function.
 
@@ -25,14 +25,14 @@ Z = f (X1*W1+X2*W2+X3*W3)  - Where f is the activation function.
 Before knowing the use of learning rate, let’s first know what learning rate is. Learning rate is the step size by which the weights & bias of the neural network are updated in the training process.
 Rightly choosing learning rate will help us to find the minima of error. Learning rate also impacts the training time. A neural network learns from training data by gradient decent algorithm, which finds the optimal weights & biases where the error is min.
 
-![Gradient Decent]()
+![Gradient Decent](https://raw.githubusercontent.com/chaitanya-vanapamala/pytorch_end2_assignment1/main/gradient_descent.png)
 
 Having small learning rates makes us enormous time to converge and find the optimal weights, on other hand if we choose high learning rate which will make drastic updates to the weights and we might miss out the valley point. So, choosing a right learning rate is crucial.
 
 ## 3. How are weights initialized?
 
 The training and convergence of a neural network is dependent on how the weights of each node are initialised. The most proven way is to initialise the weights randomly, and these random numbers will be normally distributed with mean 0 and standard deviation of 1.
-Why we have to make random initialisation and why not zeros or constant value. When we initialise weights as zero, the output of all the neurons will be same in each layer and also the gradient which will lead us to a symmetry problem. And we never optimise the weights and never reach the local minima/global minima.
+Why we have to make random initialisation and why not zeros or constant value. When we initialise weights as zero, the output of all the neurons will be same in each layer and also the gradient which will lead us to a symmetry problem. And we never optimise the weights and never reach the local minima/global minima. So, Randomly initialising the Weights will also help us to reach the local minima.
 
 ## 4. What is "loss" in a neural network?
 
@@ -50,12 +50,12 @@ Lets see a neural network with 2 inputs (x1, x2) and 1 hidden layer with 2 neuro
 H – Weighted sum of input and weights associated with the node.
 Z – Activated Weighted Sum, i.e., activation function will be applied on weighted sum H.
 
-![Neural Network]()
+![Neural Network](https://raw.githubusercontent.com/chaitanya-vanapamala/pytorch_end2_assignment1/main/nueral_network_arch.jpeg)
 
 Lets see the H and Z values at each neuron.
 
-![Network Functions]()
+![Network Functions](https://raw.githubusercontent.com/chaitanya-vanapamala/pytorch_end2_assignment1/main/outputs_of_nn.jpeg)
 
 In order to find the error gradient with respect to W111, we have to back propagate error from Z3 to input X1 node (Highlighted lines in above image). The chain rule from calculus helps us to find the gradient easily. As the intermediate H and Z values are composite function. We can use the chain rule.
 
-![Gradient Error]()
+![Gradient Error](https://raw.githubusercontent.com/chaitanya-vanapamala/pytorch_end2_assignment1/main/err_gradient.jpeg)
